@@ -1,7 +1,7 @@
 Package: InteractionPoweR
 Title: Power Analyses for Interaction Effects in Cross-Sectional
         Regressions
-Version: 0.1.1
+Version: 0.2.0
 Authors@R: 
     c(person(given = "David",
            family = "Baranger",
@@ -31,7 +31,7 @@ Authors@R:
            )
 Description: Power analysis for regression models which test the interaction of
     two independent variables on a single dependent variable. Includes options 
-    for continuous, binary, and/or skewed variables, as well as correlated 
+    for continuous, binary, or ordinal variables, as well as correlated 
     interacting variables. Also includes options to specify variable reliability.
     Power analyses can be done either analytically or via simulation.  Includes 
     tools for simulating single data sets and visualizing power analysis results.
@@ -51,7 +51,7 @@ Depends: R (>= 3.5.0)
 Imports: dplyr, MASS, parallel, doParallel, foreach, ggplot2, polynom,
         chngpt, rlang, tidyr, stats, ggbeeswarm
 NeedsCompilation: no
-Packaged: 2022-08-24 13:36:39 UTC; dbara
+Packaged: 2022-10-20 18:51:12 UTC; dbara
 Author: David Baranger [aut, cre] (<https://orcid.org/0000-0002-6659-357X>,
     davidbaranger.com),
   Brandon Goldstein [ctb],
@@ -60,4 +60,4 @@ Author: David Baranger [aut, cre] (<https://orcid.org/0000-0002-6659-357X>,
   Colin Vize [ctb],
   Don Lynam [ctb]
 Repository: CRAN
-Date/Publication: 2022-08-24 15:12:35 UTC
+Date/Publication: 2022-10-20 19:17:49 UTC
