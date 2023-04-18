@@ -1,7 +1,7 @@
 Package: InteractionPoweR
 Title: Power Analyses for Interaction Effects in Cross-Sectional
         Regressions
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: 
     c(person(given = "David",
            family = "Baranger",
@@ -46,12 +46,12 @@ BugReports: https://github.com/dbaranger/InteractionPoweR/issues
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
 Depends: R (>= 3.5.0)
 Imports: dplyr, MASS, parallel, doParallel, foreach, ggplot2, polynom,
-        chngpt, rlang, tidyr, stats, ggbeeswarm
+        chngpt, rlang, tidyr, stats, ggbeeswarm, Matrix
 NeedsCompilation: no
-Packaged: 2022-10-20 18:51:12 UTC; dbara
+Packaged: 2023-04-18 21:35:07 UTC; dbara
 Author: David Baranger [aut, cre] (<https://orcid.org/0000-0002-6659-357X>,
     davidbaranger.com),
   Brandon Goldstein [ctb],
@@ -60,4 +60,4 @@ Author: David Baranger [aut, cre] (<https://orcid.org/0000-0002-6659-357X>,
   Colin Vize [ctb],
   Don Lynam [ctb]
 Repository: CRAN
-Date/Publication: 2022-10-20 19:17:49 UTC
+Date/Publication: 2023-04-18 21:50:02 UTC
