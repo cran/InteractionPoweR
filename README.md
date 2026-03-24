@@ -16,31 +16,43 @@ The `{InteractionPoweR}` package conducts power analyses for regression
 models in cross-sectional data sets where the term of interest is an
 interaction between two or three variables, also known as ‘moderation’
 analyses. The package includes functions for simulating data sets,
-conducting power analyses, and plotting and interpreting results.
-Notable package features include (1) the ability to compute power for
-interactions between two continuous variables, (2) effect sizes are all
-specified as the cross-sectional Pearson’s correlation, (3) simulations
-do not assume that the interacting variables are independent, (4) any
-variable in the model, including the outcome, can have anywhere from 2
-(i.e., binary) to 20 discrete values, and (5) analyses can incorporate
-the effects of reliability, both of the interacting variables, as well
-as of the outcome variable.
+conducting power analyses, conducting stability analyses, and plotting
+and interpreting results. Notable package features include (1) the
+ability to compute power for interactions between two continuous
+variables, (2) effect sizes are all specified as the cross-sectional
+Pearson’s correlation, (3) simulations do not assume that the
+interacting variables are independent, (4) any variable in the model,
+including the outcome, can have anywhere from 2 (i.e., binary) to 20
+discrete values, and (5) analyses can incorporate the effects of
+reliability, both of the interacting variables, as well as of the
+outcome variable.
+
+Stability analyses for two-way interactions between continuous variables
+have been recently added. These include a new search function which
+returns the sample size or interaction effect size at which results
+stabilize.
 
 **For more information see our [tutorial
 paper](https://doi.org/10.1177/25152459231187531), the package
 [vignette](https://dbaranger.github.io/InteractionPoweR/articles/articles/InteractionPoweRvignette.html),
 and the
-[FAQ](https://dbaranger.github.io/InteractionPoweR/articles/articles/CommonQuestions.html).**
+[FAQ](https://dbaranger.github.io/InteractionPoweR/articles/articles/CommonQuestions.html).
+Information on stability analyses can be found in our [new
+paper](https://doi.org/10.1177/25152459251407860)**
 
-We have a [**Shiny
-app**](https://mfinsaas.shinyapps.io/InteractionPoweR/) which implements
-the major functions for simulation-based power analyses in a
-user-friendly point-and-click interface. We also have a [**simpler Shiny
-app**](https://david-baranger.shinyapps.io/InteractionPoweR_analytic/)
-for computing analytic power. We recommend this app particularly for
-beginners and users who are new to power analyses. We have also recently
-added [**a new shiny app for three-way
-interactions**](https://david-baranger.shinyapps.io/InteractionPoweR_3way_analytic/).
+**Web apps:**
+
+- Simulation-based power 2-way: We have a [**Shiny
+  app**](https://mfinsaas.shinyapps.io/InteractionPoweR/) which
+  implements the major functions for simulation-based power analyses in
+  a user-friendly point-and-click interface.
+- Analytic power 2-way: We also have a [**simpler Shiny
+  app**](https://david-baranger.shinyapps.io/InteractionPoweR_analytic/)
+  for computing analytic power. We recommend this app particularly for
+  beginners and users who are new to power analyses.
+- Analytic power 3-way: We have also recently added [**a new shiny app
+  for three-way
+  interactions**](https://david-baranger.shinyapps.io/InteractionPoweR_3way_analytic/).
 
 Please report bugs, issues, or questions as an [Issue on
 Github](https://github.com/dbaranger/InteractionPoweR/issues/).
@@ -107,7 +119,7 @@ simulations (`n.iter = 10000`).
 ``` r
 set.seed(2022)
 test_power<-power_interaction(
-  n.iter = 10000,            # number of simulations per unique combination of input parameters
+  n.iter = 1000,            # number of simulations per unique combination of input parameters
   alpha = 0.05,             # alpha, for the power analysis
   N = 350,                  # sample size
   r.x1x2.y = .15,           # interaction effect to test (correlation between x1*x2 and y)
@@ -119,8 +131,8 @@ test_power<-power_interaction(
 )
 
 test_power
-#>     N    pwr
-#> 1 350 0.8086
+#>     N   pwr
+#> 1 350 0.815
 ```
 
 The simulation’s accuracy will increase with more iterations.
@@ -130,8 +142,18 @@ The simulation’s accuracy will increase with more iterations.
 If you use `{InteractionPoweR}` in a publication, please cite our
 [tutorial paper](https://doi.org/10.1177/25152459231187531):
 
-Baranger DAA, Finsaas MC, Goldstein BL, Vize CE, Lynam DR, Olino TM
-(2023). “Tutorial: Power analyses for interaction effects in
-cross-sectional regressions.” *Advances in Methods and Practices in
-Psychological Science*. 6(3). doi:
+Baranger DAA, Finsaas MC, Goldstein BL, Vize CE, Lynam DR, Olino TM.
+“Tutorial: Power analyses for interaction effects in cross-sectional
+regressions.” *Advances in Methods and Practices in Psychological
+Science*. 2023; 6(3). doi:
 [10.1177/25152459231187531](https://doi.org/10.1177/25152459231187531)
+
+If you use our stability analyses for interactions in a paper, please
+cite our [paper on
+stability](https://doi.org/10.1177/25152459251407860):
+
+Castillo A, Miller JD, Vize C, Baranger DAA, Lynam DR. “When Do
+Interaction/Moderation Effects Stabilize in Linear Regression?”
+*Advances in Methods and Practices in Psychological Science*. 2026;
+9(1). doi:
+[10.1177/25152459251407860](https://doi.org/10.1177/25152459251407860)

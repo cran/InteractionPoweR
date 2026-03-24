@@ -1,3 +1,13 @@
+# InteractionPoweR 0.2.4
+
+-   Adds citation information and minor bug fixes.
+
+
+# InteractionPoweR 0.2.3
+
+-   Adds two-way interaction stability function -
+    `run_pos_power_search()`.
+
 # InteractionPoweR 0.2.2
 
 -   Adds power analysis function for 3-way interactions -
